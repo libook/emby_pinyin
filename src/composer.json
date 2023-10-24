@@ -29,7 +29,8 @@
             "App\\": "app/"
         },
         "files": [
-          "app/Functions.php"
+          "app/Functions.php",
+          "app/Kana.php"
         ]
     }
 }

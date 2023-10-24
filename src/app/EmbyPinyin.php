@@ -449,8 +449,15 @@ by: hisune.com        |_____|______|__|             |_____|
                 }
 
                 if (!$isChinese) {
-                    // 如果字符不是中文，将字符直接拼接到$sortName
-                    $sortName .= $char;
+                    // 如果字符不是中文
+                    $result=$char;
+
+                    // 尝试其他支持的语言
+                    // 日文假名转罗马音
+                    $result=kana_to_romaji($result);
+
+                    // 将字符直接拼接到$sortName
+                    $sortName .= $result;
                 }
             }
             // logger("sortName: " . $sortName . "\tchinesePart: " . $chinesePart);
